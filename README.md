@@ -86,6 +86,12 @@ Suppose we want to run PHP code on the server and get an interactive shell conne
 
 ![shell php con exit](https://github.com/ajacobhack/rogue-https-server/assets/99199970/57864150-711f-405e-bc91-fbfbab172a6e)
 
+### Vulnerabilities that help identify and check:
+- Security Misconfiguration: target server connects via https to external servers with self-signed certificates, or without dns.
+- External Service Interaction (DNS and HTTP): the target server/application can, due to bad configuration, request resources externally through https and previous DNS resolution to any external server, in this case ours.
+- Blind SSRF on the target server, which manages to connect via Out-Of-Band to our https server with dns, which could chain execute requests to internal resources.
+- RCE PHP: if the target server or application can request resources from our server, they could execute a reverse PHP shell served by our server, achieving remote code execution.
+
 ### **Contribution**
 
 We welcome your contributions to Rogue HTTPS Server! If you encounter any issues, have an idea for improvement, or want to add new features, feel free to open an issue or submit a pull request on the official repository.
