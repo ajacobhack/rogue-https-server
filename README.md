@@ -103,10 +103,6 @@ We welcome your contributions to Rogue HTTPS Server! If you encounter any issues
 
 This project currently does not have an open license.
 
-### **Contact**
-
-If you have any questions or suggestions, feel free to contact our team. You can email us at **[info@roguehttpsserver.com](mailto:info@roguehttpsserver.com)** or join our community on the Discord channel **[Rogue HTTPS Server Community](https://discord .gg/roguehttpsserver)**. We look forward to helping you!
-
 ### **Thanks**
 
 I want to thank the community of developers and contributors who have made this project possible. Your contributions and feedback have been instrumental in improving Rogue HTTPS Server and providing a useful and reliable tool.
