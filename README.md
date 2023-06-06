@@ -13,6 +13,15 @@ Rogue HTTPS Server is a powerful and easy-to-use tool that allows you to create 
 - **PHP code execution**: Executes PHP code on the server to perform dynamic and custom actions in your web applications.
 - **Static File Management**: Serve static files, such as HTML, CSS, JavaScript, images and more, to display content on your server.
 
+### Vulnerabilities that help identify, check and execute:
+- Security configuration errors: destination server connects via https to external servers with self-signed certificates or no dns.
+- External Service Interaction (DNS and HTTP): the target server/application can, due to a bad configuration, request external resources, instead of internal ones, through https and previous DNS resolution to any external server, in this case ours .
+- Blind SSRF on the target server, which manages to connect via Out-Of-Band to our https server with dns, which could chain execution requests to internal resources.
+- RCE PHP: If the target server or application can request resources from our server, it could execute a reverse PHP shell served by our server, achieving remote code execution.
+- Stored XSS that when executed exfiltrates and sends cookies via HTTPS connection.
+- Out-of-band SQL injection (OOB SQLi): an asynchronous SQL query can cause the server to perform out-of-band interactions with an external domain and server, ours.
+- Phishing: HTTPS server with DNS could be used to serve cloned web pages to capture credentials.
+
 ## Use
 
 1. Clone the Rogue HTTPS Server repository to your local machine.
@@ -85,12 +94,6 @@ Suppose we want to run PHP code on the server and get an interactive shell conne
 5. When you access **`https://127.0.0.1:443/shell.php`** in your browser, the server will execute the PHP code and open a shell connection in the netcat session.
 
 ![shell php con exit](https://github.com/ajacobhack/rogue-https-server/assets/99199970/57864150-711f-405e-bc91-fbfbab172a6e)
-
-### Vulnerabilities that help identify and check:
-- Security Misconfiguration: target server connects via https to external servers with self-signed certificates, or without dns.
-- External Service Interaction (DNS and HTTP): the target server/application can, due to bad configuration, request resources externally through https and previous DNS resolution to any external server, in this case ours.
-- Blind SSRF on the target server, which manages to connect via Out-Of-Band to our https server with dns, which could chain execute requests to internal resources.
-- RCE PHP: if the target server or application can request resources from our server, they could execute a reverse PHP shell served by our server, achieving remote code execution.
 
 ### **Contribution**
 
