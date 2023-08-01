@@ -6,7 +6,7 @@ Rogue HTTPS Server is a tool that allows you to create a Python 3.10/3.11 HTTPS/
 
 Rogue HTTPS Server is a powerful and easy-to-use tool that allows you to create an HTTPS/SSL server with TLS in Python 3.10/3.11, primarily intended for ethical hacking tests that require a server with encrypted connections that may be able to connect to applications websites strictly configured for HTTPS traffic. It provides additional options such as assigning a free DNS to the specified IP address, automatic pem certificate creation, static server, and PHP file execution.
 
-### **Characteristics**
+### **Features**
 
 - **HTTPS/SSL Server**: Creates a TCP/IP server at the specified IP address and port to listen for HTTPS/SSL connections, including 443.
 - **Free DNS Support**: Assign a free subdomain to the IP address using DuckDNS to access your server more conveniently.
